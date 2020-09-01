@@ -5,7 +5,12 @@ using UnityEngine;
 public class Marker : MonoBehaviour
 {
     public static Marker instance;
-    
+
+
+    [SerializeField]
+    private GameObject crack;
+
+    private bool ballHit = false;
 
     void Awake()
     {
@@ -31,5 +36,15 @@ public class Marker : MonoBehaviour
         {
             GameManager.isMarkerOnStrikeZone = true;
         }
+        if (collision.CompareTag("Ball"))
+        {
+            ballHit = true;
+        }
+    }
+
+
+    private void OnDestroy()
+    {
+        if (ballHit) Instantiate(crack, transform.position, Quaternion.identity);
     }
 }

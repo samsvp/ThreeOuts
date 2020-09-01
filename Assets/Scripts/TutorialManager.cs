@@ -36,7 +36,7 @@ public class TutorialManager : GameManager
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) SceneManager.LoadScene(0); // Start Menu
+        if (Input.GetKeyDown(KeyCode.Escape)) SceneManager.LoadScene("MainMenu");
         if (canContinueSentence && Input.GetMouseButtonDown(0))
         {
             canContinueSentence = DisplayNextSentence();

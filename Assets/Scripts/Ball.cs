@@ -108,6 +108,7 @@ public class Ball : MonoBehaviour
     {
         Batter.instance.UpdateLists(ballHeight, ballWidth, speedType);
         willBatterHit = Batter.instance.WillHit(ballHeight, ballWidth, speedType);
+        print(willBatterHit);
         StartCoroutine(IThrow(marker));
     }
 
@@ -153,7 +154,7 @@ public class Ball : MonoBehaviour
         if (collision.CompareTag("Marker"))
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, -rb2d.velocity.y);
-
+            
             if (GameManager.isMarkerOnStrikeZone || Batter.instance.willSwing) GameManager.instance.AddStrike();
             else GameManager.instance.AddFoul();
 

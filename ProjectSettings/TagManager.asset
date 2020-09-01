@@ -11,6 +11,7 @@ TagManager:
   - SlowSwing
   - NormalSwing
   - FastSwing
+  - Ball
   layers:
   - Default
   - TransparentFX

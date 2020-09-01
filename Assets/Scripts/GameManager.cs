@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
+
+    [SerializeField]
+    private GameObject result;
+    [SerializeField]
+    private Text resultText;
 
     [HideInInspector]
     public int strikes = 0;
@@ -82,13 +88,23 @@ public class GameManager : MonoBehaviour
             if (++score.x == 3)
             {
                 print("won");
+                ++LoadBatter.batterNumber;
+                string won = "You won the game!";
+                StartCoroutine(ChangeBatter(LoadBatter.batterNumber, won));
             }
         }
         else
         {
-            if (++score.y == 3) print("lost");
+            if (++score.y == 3)
+            {
+                print("lost");
+                string lost = "You lost on batter number " + (LoadBatter.batterNumber + 1) +
+                    " out of 6 batters.";
+                LoadBatter.batterNumber = 0;
+                StartCoroutine(ChangeBatter(LoadBatter.batterNumber, lost));
+            }
         }
-
+        if (score.y < 3 && score.x < 3) StartCoroutine(SetResult(playerWon));
         scoreText.text = "Score:\nP: " + score.x + " x  C: " + score.y;
     }
 
@@ -108,4 +124,30 @@ public class GameManager : MonoBehaviour
             foulObjects[i].SetActive(false);
         }
     }
+
+
+    protected IEnumerator SetResult(bool won)
+    {
+        strikeCursor.gameObject.SetActive(false);
+        result.SetActive(true);
+        if (won) resultText.text = "You won the set!";
+        else resultText.text = "You lost the set!";
+        resultText.text += "\nScore:\nP: " + score.x + " x  C: " + score.y;
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        result.SetActive(false);
+        yield return null;
+        strikeCursor.gameObject.SetActive(true);
+    }
+
+
+    protected IEnumerator ChangeBatter(int n, string sentence)
+    {
+        strikeCursor.gameObject.SetActive(false);
+        Save.SaveGame(n);
+        result.SetActive(true);
+        resultText.text = sentence;
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 }

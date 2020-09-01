@@ -96,23 +96,48 @@ public class Batter : Character
 
     public bool WillHit(Ball.BallHeights height, Ball.BallWidths width, Ball.SpeedType speedType)
     {
-        if (!willSwing) return false;
+        float reflexes;
+        if (speedType == Ball.SpeedType.slow) reflexes = this.reflexes;
+        else if (speedType == Ball.SpeedType.normal) reflexes = 0.9f * this.reflexes;
+        else reflexes = 0.7f * this.reflexes;
 
-        bool rightSpeed = predictedSpeed == speedType && Random.Range(0.0f, 1.0f) < willHitIfSpeed;
+        // print("heigh: " + height + "\twidth: " + width + "\tspeed: " + speedType);
+        // print("predicted heigh: " + predictedHeight + "\tpredicted width: " + 
+        //   predictedWidth + "\tspredicted peed: " + predictedSpeed);
+
+        if (!willSwing) return false;
+        if ((width == Ball.BallWidths.farLeft || width == Ball.BallWidths.farRight))
+        {
+            if (Random.Range(0.0f, 1.0f) < reflexes)
+            {
+                willSwing = false;
+                return false;
+            }
+        }
+        else if ((predictedWidth == Ball.BallWidths.farLeft || predictedWidth == Ball.BallWidths.farRight) &&
+            Random.Range(0.0f, 1.0f) < reflexes)
+        {
+                predictedWidth = RePredictWidth();
+        }
+
+        bool rightSpeed = predictedSpeed == speedType && Random.Range(0.0f, 1.0f) < willHitIfSpeed * this.reflexes;
 
         if (predictedHeight == height && predictedWidth == width)
         {
             return true;
         }
         else if (predictedHeight == height && (rightSpeed ||
-                Random.Range(0.0f, 1.0f) < willHitIfHeight))
+                Random.Range(0.0f, 1.0f) <= willHitIfHeight * reflexes))
         {
             return true;
         }
         else if (predictedWidth == width && (rightSpeed ||
-                Random.Range(0.0f, 1.0f) < willHitIfWidth))
+                Random.Range(0.0f, 1.0f) <= willHitIfWidth * reflexes))
         {
-            return true;
+            if ((width == Ball.BallWidths.farLeft || width == Ball.BallWidths.farRight))
+                return false;
+            else
+                return true;
         }
         else if (rightSpeed)
         {
@@ -124,13 +149,15 @@ public class Batter : Character
 
     public void MakePredictions()
     {
+        willSwing = false;
+
         predictedHeight = PredictHeight();
         predictedWidth = PredictWidth();
         predictedSpeed = PredictSpeed();
 
         if ((predictedWidth == Ball.BallWidths.farLeft ||
             predictedWidth == Ball.BallWidths.farRight) &&
-            Random.Range(0.0f, 1.0f) > 0.5f) willSwing = false;
+            Random.Range(0.0f, 1.0f) < 0.5f) willSwing = false;
         // 5% chance of not swinging
         else if (GameManager.instance.strikes < 2 && Random.Range(0.0f, 1.0f) > 0.95f) willSwing = false;
         else willSwing = true;
@@ -165,6 +192,9 @@ public class Batter : Character
 
     private Ball.BallWidths PredictWidth()
     {
+        // Appply a sliding window
+        if (ballWidths.Count > 10) ballWidths.RemoveAt(ballWidths.Count - 1);
+
         int leftCount = ballWidths.Count(b => b == Ball.BallWidths.left);
         int midCount = ballWidths.Count(b => b == Ball.BallWidths.mid);
         int rightCount = ballWidths.Count(b => b == Ball.BallWidths.right);
@@ -181,6 +211,29 @@ public class Batter : Character
         if (p < (leftCount + midCount) / (float)total) return Ball.BallWidths.mid;
         if (p < (leftCount + midCount + rightCount) / (float)total) return Ball.BallWidths.right;
         return Ball.BallWidths.farRight;
+    }
+
+
+    private Ball.BallWidths RePredictWidth()
+    {
+        // Appply a sliding window
+        if (ballWidths.Count > 10) ballWidths.RemoveAt(ballWidths.Count - 1);
+
+        int leftCount = ballWidths.Count(b => b == Ball.BallWidths.left);
+        int midCount = ballWidths.Count(b => b == Ball.BallWidths.mid);
+        int rightCount = ballWidths.Count(b => b == Ball.BallWidths.right);
+
+        int total = leftCount + midCount + rightCount;
+
+        if (total == 0) return new List<Ball.BallWidths>() {
+                    Ball.BallWidths.left, Ball.BallWidths.mid, Ball.BallWidths.right,
+                }[Random.Range(0, 2)];
+
+        float p = Random.Range(0.0f, 1.0f);
+
+        if (p < leftCount / (float)total) return Ball.BallWidths.left;
+        if (p < (leftCount + midCount) / (float)total) return Ball.BallWidths.mid;
+        return Ball.BallWidths.right;
     }
 
 
@@ -250,10 +303,10 @@ public class Batter : Character
         yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.75f);
         bc2d.enabled = false;
 
-        yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f);
+        yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1);
         anim.SetBool("Swing", false);
         yield return null;
-
+        
         anim.enabled = false;
     }
 
