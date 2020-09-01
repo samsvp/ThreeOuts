@@ -13,9 +13,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public int fouls = 0;
 
-    private int maxStrikes = 3;
-    private int maxFouls = 2;
-    private int maxTurns = 3;
+    protected int maxStrikes = 3;
+    protected int maxFouls = 2;
+    protected int maxTurns = 3;
     
     public static bool isMarkerOnStrikeZone = false;
     public static bool batterSwung = false;
@@ -30,23 +30,10 @@ public class GameManager : MonoBehaviour
     public Text turnText;
     public Text scoreText;
 
-    void Awake()
+    protected virtual void Awake()
     {
         if (instance == null) instance = this;
         else Destroy(gameObject);
-    }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
 
@@ -88,7 +75,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void UpdateScore(bool playerWon)
+    protected virtual void UpdateScore(bool playerWon)
     {
         if (playerWon)
         {
@@ -106,7 +93,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void ResetVariables()
+    protected void ResetVariables()
     {
         strikes = 0;
         fouls = 0;
