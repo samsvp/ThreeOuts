@@ -43,6 +43,12 @@ public class Ball : MonoBehaviour
         get { return ballWidth; }
     }
 
+    // Sound
+    [SerializeField]
+    private AudioClip hitMarkerClip;
+    [SerializeField]
+    private AudioClip hitBatClip;
+
     void Awake()
     {
         if (instance == null) instance = this;
@@ -158,6 +164,10 @@ public class Ball : MonoBehaviour
             if (GameManager.isMarkerOnStrikeZone || Batter.instance.willSwing) GameManager.instance.AddStrike();
             else GameManager.instance.AddFoul();
 
+            var aS = GetComponent<AudioSource>();
+            aS.clip = hitMarkerClip;
+            aS.Play();
+
             isHit = true;
             StartCoroutine(SlowDown());
         }
@@ -168,6 +178,10 @@ public class Ball : MonoBehaviour
             rb2d.velocity = new Vector2(rb2d.velocity.x + Random.Range(-4, 4), -rb2d.velocity.y);
 
             GameManager.instance.AddFoul();
+
+            var aS = GetComponent<AudioSource>();
+            aS.clip = hitBatClip;
+            aS.Play();
 
             isHit = true;
             StartCoroutine(Hit());

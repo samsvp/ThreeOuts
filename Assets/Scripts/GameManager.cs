@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -35,6 +36,11 @@ public class GameManager : MonoBehaviour
     public StrikeCursor strikeCursor;
     public Text turnText;
     public Text scoreText;
+
+    [SerializeField]
+    private AudioClip cheerClip;
+    [SerializeField]
+    private AudioClip booClip;
 
     protected virtual void Awake()
     {
@@ -87,21 +93,19 @@ public class GameManager : MonoBehaviour
         {
             if (++score.x == 3)
             {
-                print("won");
                 ++LoadBatter.batterNumber;
                 string won = "You won the game!";
-                StartCoroutine(ChangeBatter(LoadBatter.batterNumber, won));
+                StartCoroutine(ChangeBatter(LoadBatter.batterNumber, won, cheerClip));
             }
         }
         else
         {
             if (++score.y == 3)
             {
-                print("lost");
                 string lost = "You lost on batter number " + (LoadBatter.batterNumber + 1) +
                     " out of 6 batters.";
                 LoadBatter.batterNumber = 0;
-                StartCoroutine(ChangeBatter(LoadBatter.batterNumber, lost));
+                StartCoroutine(ChangeBatter(LoadBatter.batterNumber, lost, booClip));
             }
         }
         if (score.y < 3 && score.x < 3) StartCoroutine(SetResult(playerWon));
@@ -130,24 +134,43 @@ public class GameManager : MonoBehaviour
     {
         strikeCursor.gameObject.SetActive(false);
         result.SetActive(true);
+
         if (won) resultText.text = "You won the set!";
         else resultText.text = "You lost the set!";
         resultText.text += "\nScore:\nP: " + score.x + " x  C: " + score.y;
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+
+        var clip = won ? cheerClip : booClip;
+        yield return StartCoroutine(PlayClip(clip));
+        
         result.SetActive(false);
         yield return null;
         strikeCursor.gameObject.SetActive(true);
     }
 
 
-    protected IEnumerator ChangeBatter(int n, string sentence)
+    protected IEnumerator ChangeBatter(int n, string sentence, AudioClip clip)
     {
         strikeCursor.gameObject.SetActive(false);
         Save.SaveGame(n);
         result.SetActive(true);
         resultText.text = sentence;
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+
+        yield return StartCoroutine(PlayClip(clip));
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+
+    protected IEnumerator PlayClip(AudioClip clip)
+    {
+        var audioSource = GetComponents<AudioSource>().First(a => a.clip == null);
+        audioSource.clip = clip;
+        audioSource.Play();
+
+        yield return null;
+        yield return new WaitWhile(() => audioSource.isPlaying);
+
+        audioSource.clip = null;
     }
 
 }

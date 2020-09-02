@@ -17,6 +17,8 @@ public class Player : Character
     [SerializeField]
     private Sprite ballThrownSprite;
 
+    private AudioSource aS;
+
     void Awake()
     {
         if (instance == null) instance = this;
@@ -29,6 +31,7 @@ public class Player : Character
         base.Start();
 
         anim.enabled = false;
+        aS = GetComponent<AudioSource>();
         Instantiate(ball, transform.position, Quaternion.identity).GetComponent<Ball>();
     }
 
@@ -36,9 +39,7 @@ public class Player : Character
     protected override void Update()
     {
         base.Update();
-        ///DEBUG
-        if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        ///DEBUG
+        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
     }
 
 
@@ -64,6 +65,8 @@ public class Player : Character
         anim.SetBool("Throw", true);
         yield return null;
 
+        yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f);
+        aS.Play();
         yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.95f);
 
         anim.SetBool("Throw", false);
