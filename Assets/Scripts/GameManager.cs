@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
 
     protected int maxStrikes = 3;
     protected int maxFouls = 2;
-    protected int maxTurns = 3;
     
     public static bool isMarkerOnStrikeZone = false;
     public static bool batterSwung = false;
@@ -34,7 +33,6 @@ public class GameManager : MonoBehaviour
     public GameObject[] strikeObjects;
     public GameObject[] foulObjects;
     public StrikeCursor strikeCursor;
-    public Text turnText;
     public Text scoreText;
 
     [SerializeField]
