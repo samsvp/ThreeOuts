@@ -60,6 +60,17 @@ public class Batter : Character
     [Range(0.0f, 1.0f)]
     private float willHitIfSpeed = 0.5f;
 
+    // strike cursor
+    private GameObject strikeCursor;
+
+    // sprite
+    private Sprite defaultSprite;
+
+    // idle variables
+    [SerializeField]
+    private float idleTimer;
+    private float currentTimer = 0;
+
     void Awake()
     {
         if (instance == null) instance = this;
@@ -75,14 +86,32 @@ public class Batter : Character
         bc2d = GetComponent<BoxCollider2D>();
         eyeSR = transform.GetChild(3).gameObject.GetComponent<SpriteRenderer>();
 
+        strikeCursor = FindObjectOfType<StrikeCursor>().gameObject;
+        strikeCursor.SetActive(false);
+
         bc2d.enabled = false;
         anim.enabled = false;
+
+        defaultSprite = sR.sprite;
+
+        StartCoroutine(PlayIntro());
     }
 
     // Update is called once per frame
     protected override void Update()
     {
         
+    }
+
+
+    private IEnumerator PlayIntro()
+    {
+        yield return new WaitForSeconds(0.2f);
+        anim.enabled = true;
+        yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.95f);
+        yield return null;
+        strikeCursor.SetActive(true);
+        anim.SetBool("Idle", true);
     }
 
 
@@ -297,17 +326,14 @@ public class Batter : Character
         anim.SetBool("Swing", true);
         yield return null;
 
-        yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.5f);
+        yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.4f);
         if (willSwing && Ball.instance.willBatterHit) bc2d.enabled = true;
 
-        yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.75f);
+        yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.6f);
         bc2d.enabled = false;
 
         yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1);
         anim.SetBool("Swing", false);
-        yield return null;
-        
-        anim.enabled = false;
     }
 
 }

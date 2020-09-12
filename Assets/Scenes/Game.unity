@@ -184,7 +184,7 @@ RectTransform:
   m_Children:
   - {fileID: 858727709}
   m_Father: {fileID: 6579745272434478561}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -229,18 +229,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557820145}
   m_CullTransparentMesh: 0
---- !u!114 &764599118 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6579745272796124846, guid: a3efffb2c290f4948ba286cfd33f8a40,
-    type: 3}
-  m_PrefabInstance: {fileID: 6579745272434478560}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &858727708
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,6 +711,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StrikeCursor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3939101047956783345, guid: a2c6a0fbb1ad1f04aa80ad0361bf704d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3939101047956783346, guid: a2c6a0fbb1ad1f04aa80ad0361bf704d,
         type: 3}
@@ -1479,7 +1472,7 @@ PrefabInstance:
         type: 3}
       propertyPath: turnText
       value: 
-      objectReference: {fileID: 764599118}
+      objectReference: {fileID: 0}
     - target: {fileID: 8269952795666989523, guid: a08fa9bd638c0fa459758fc2a58c0325,
         type: 3}
       propertyPath: scoreText

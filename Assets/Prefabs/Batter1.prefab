@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6931667912289457543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 1.15, z: 0}
+  m_LocalPosition: {x: -0.01, y: 1.9, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 6931667913754688574}
@@ -399,7 +399,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 5854512291522262975, guid: 802193fbcb5885d4e902194ec6097971,
+  m_Sprite: {fileID: 6690366923788651422, guid: acc19cae33db21d458d4330df53d1d71,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -421,7 +421,7 @@ Animator:
   m_GameObject: {fileID: 6931667913754688571}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6a21f19a79e65694d91be6a803b12a37, type: 2}
+  m_Controller: {fileID: 9100000, guid: e14a92a6c15ee8f44aa1d189f67dfaa6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -502,3 +502,4 @@ MonoBehaviour:
   willHitIfHeight: 0.7
   willHitIfWidth: 0.6
   willHitIfSpeed: 0.5
+  idleTimer: 0
