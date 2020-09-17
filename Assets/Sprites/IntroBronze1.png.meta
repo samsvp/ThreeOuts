@@ -1,0 +1,646 @@
+fileFormatVersion: 2
+guid: 4319d8f7416a85945a0ec09ad8b6a35c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7875594762867116421
+    second: IntroBronze1_0
+  - first:
+      213: -3146385589544577059
+    second: IntroBronze1_1
+  - first:
+      213: -4718089035307461148
+    second: IntroBronze1_2
+  - first:
+      213: 3608660126969996355
+    second: IntroBronze1_3
+  - first:
+      213: -1155021293137880370
+    second: IntroBronze1_4
+  - first:
+      213: -2641615557018733657
+    second: IntroBronze1_5
+  - first:
+      213: -7540698249074293455
+    second: IntroBronze1_6
+  - first:
+      213: 793690384507197504
+    second: IntroBronze1_7
+  - first:
+      213: -3438269821257861535
+    second: IntroBronze1_8
+  - first:
+      213: -3920792343298592695
+    second: IntroBronze1_9
+  - first:
+      213: 6572996441656654643
+    second: IntroBronze1_10
+  - first:
+      213: 5566761403126578208
+    second: IntroBronze1_11
+  - first:
+      213: 1313384321598693793
+    second: IntroBronze1_12
+  - first:
+      213: -1501801259334292722
+    second: IntroBronze1_13
+  - first:
+      213: -6442239399229322971
+    second: IntroBronze1_14
+  - first:
+      213: 6809625892012701163
+    second: IntroBronze1_15
+  - first:
+      213: 524904438632538065
+    second: IntroBronze1_16
+  - first:
+      213: -8322778050409635049
+    second: IntroBronze1_17
+  - first:
+      213: -3162968801437089
+    second: IntroBronze1_18
+  - first:
+      213: -847406162012091145
+    second: IntroBronze1_19
+  - first:
+      213: 5771861392654040337
+    second: IntroBronze1_20
+  - first:
+      213: -6745994373227431557
+    second: IntroBronze1_21
+  - first:
+      213: 6359585563915925135
+    second: IntroBronze1_22
+  - first:
+      213: 5569046427203880975
+    second: IntroBronze1_23
+  - first:
+      213: -6623497418991045336
+    second: IntroBronze1_24
+  - first:
+      213: 710953335348034272
+    second: IntroBronze1_25
+  - first:
+      213: 2666666249913615752
+    second: IntroBronze1_26
+  - first:
+      213: 6697369842076716992
+    second: IntroBronze1_27
+  - first:
+      213: 8263995011765725890
+    second: IntroBronze1_28
+  - first:
+      213: -2979642284140116587
+    second: IntroBronze1_29
+  - first:
+      213: -4909448048169586823
+    second: IntroBronze1_30
+  - first:
+      213: -1187630832153133354
+    second: IntroBronze1_31
+  - first:
+      213: 1730480297241447701
+    second: IntroBronze1_32
+  - first:
+      213: -3788479110592208912
+    second: IntroBronze1_33
+  - first:
+      213: -8592770771635731074
+    second: IntroBronze1_34
+  - first:
+      213: 7873695392084580406
+    second: IntroBronze1_35
+  - first:
+      213: 4283969972250669061
+    second: IntroBronze1_36
+  - first:
+      213: 6063145800050009414
+    second: IntroBronze1_37
+  - first:
+      213: 3240662753287655424
+    second: IntroBronze1_38
+  - first:
+      213: -6918535231499677666
+    second: IntroBronze1_39
+  - first:
+      213: -5835275910946910443
+    second: IntroBronze1_40
+  - first:
+      213: -1789315334304448973
+    second: IntroBronze1_41
+  - first:
+      213: 4673400397761549885
+    second: IntroBronze1_42
+  - first:
+      213: 7566175136290612984
+    second: IntroBronze1_43
+  - first:
+      213: -4579777159611965094
+    second: IntroBronze1_44
+  - first:
+      213: 3719838617459344978
+    second: IntroBronze1_45
+  - first:
+      213: 1493673967447141382
+    second: IntroBronze1_46
+  - first:
+      213: 2218146519383464600
+    second: IntroBronze1_47
+  - first:
+      213: -3614716779514612781
+    second: IntroBronze1_48
+  - first:
+      213: 7568092429541027777
+    second: IntroBronze1_49
+  - first:
+      213: 8422294901119703834
+    second: IntroBronze1_50
+  - first:
+      213: -9007248775242453108
+    second: IntroBronze1_51
+  - first:
+      213: -7067835572202544503
+    second: IntroBronze1_52
+  - first:
+      213: 3644188171226513979
+    second: IntroBronze1_53
+  - first:
+      213: 3484483371491786336
+    second: IntroBronze1_54
+  - first:
+      213: 8152228090312770525
+    second: IntroBronze1_55
+  - first:
+      213: -7755003779733056470
+    second: IntroBronze1_0
+  - first:
+      213: -4037899106310635958
+    second: IntroBronze1_1
+  - first:
+      213: 6890437815306437281
+    second: IntroBronze1_2
+  - first:
+      213: -4759527649596921185
+    second: IntroBronze1_3
+  - first:
+      213: 116636369852327489
+    second: IntroBronze1_4
+  - first:
+      213: -8930396701085518192
+    second: IntroBronze1_5
+  - first:
+      213: -3922181735596601752
+    second: IntroBronze1_6
+  - first:
+      213: -7758755845908841151
+    second: IntroBronze1_7
+  - first:
+      213: 341343555066175437
+    second: IntroBronze1_8
+  - first:
+      213: -7896858012315568984
+    second: IntroBronze1_9
+  - first:
+      213: 4030546240410669866
+    second: IntroBronze1_10
+  - first:
+      213: -9027171044422962221
+    second: IntroBronze1_11
+  - first:
+      213: -1293256939570022635
+    second: IntroBronze1_12
+  - first:
+      213: -1646758881015079108
+    second: IntroBronze1_13
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Lumin
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: IntroBronze1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1664
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24133d6621b06490800000000000000
+      internalID: -7755003779733056470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroBronze1_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ebc71182086f7c0800000000000000
+      internalID: -4037899106310635958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroBronze1_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1408
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a242489fa0cf9f50800000000000000
+      internalID: 6890437815306437281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroBronze1_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9a202bd1d2c2fdb0800000000000000
+      internalID: -4759527649596921185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroBronze1_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1152
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14660f019206e9100800000000000000
+      internalID: 116636369852327489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroBronze1_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0963a70048bd01480800000000000000
+      internalID: -8930396701085518192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroBronze1_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86e4d39fd7c9199c0800000000000000
+      internalID: -3922181735596601752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroBronze1_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14d3e917aac535490800000000000000
+      internalID: -7758755845908841151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroBronze1_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf9612a722bcb400800000000000000
+      internalID: 341343555066175437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroBronze1_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a4bb362a79b86290800000000000000
+      internalID: -7896858012315568984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroBronze1_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23d67e63706fe730800000000000000
+      internalID: 4030546240410669866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroBronze1_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d33a7a53cb09b280800000000000000
+      internalID: -9027171044422962221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroBronze1_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 517be995aad6d0ee0800000000000000
+      internalID: -1293256939570022635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroBronze1_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f506ac5898529e0800000000000000
+      internalID: -1646758881015079108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -71,9 +71,11 @@ public class StrikeCursor : MonoBehaviour
                 cursorTransforms[i].gameObject.SetActive(false);
                 cursorTransforms[i].localPosition = cursorLocalPositions[i];
             }
+            Batter.instance.GetComponent<SpriteRenderer>().enabled = true;
         }
         else
         {
+            Batter.instance.GetComponent<SpriteRenderer>().enabled = false;
             for (int i = 0; i < cursorTransforms.Length; i++)
             {
                 cursorTransforms[i].gameObject.SetActive(true);

@@ -89,6 +89,8 @@ public class Batter : Character
         strikeCursor = FindObjectOfType<StrikeCursor>().gameObject;
         strikeCursor.SetActive(false);
 
+        SpeedBar.instance.StopCount();
+
         bc2d.enabled = false;
         anim.enabled = false;
 
@@ -106,11 +108,19 @@ public class Batter : Character
 
     private IEnumerator PlayIntro()
     {
+        var introAnim = transform.GetChild(5).gameObject.GetComponent<Animator>();
+        yield return new WaitUntil(() => introAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.97f);
+        introAnim.enabled = false;
+        yield return new WaitForSeconds(0.8f);
+        Destroy(introAnim.gameObject);
+        Destroy(transform.GetChild(4).gameObject);
+
         yield return new WaitForSeconds(0.2f);
         anim.enabled = true;
         yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.95f);
         yield return null;
         strikeCursor.SetActive(true);
+        SpeedBar.instance.StartCount();
         anim.SetBool("Idle", true);
     }
 

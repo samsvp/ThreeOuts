@@ -1525,7 +1525,7 @@ MonoBehaviour:
   - {fileID: 6931667913754688571, guid: 6f92380017178d140a99e56b3d6ff280, type: 3}
   - {fileID: 6931667913754688571, guid: 7febb1e36c9a03742a5f117d3707a6ab, type: 3}
   - {fileID: 6931667913754688571, guid: c9a8de290e698c6429b297dd7798d227, type: 3}
-  batterPosition: {x: -0.688, y: 1.891, z: 0}
+  batterPosition: {x: -0.688, y: 2.5, z: 0}
 --- !u!82 &8269952795953559897
 AudioSource:
   m_ObjectHideFlags: 0
