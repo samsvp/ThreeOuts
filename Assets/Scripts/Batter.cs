@@ -115,6 +115,9 @@ public class Batter : Character
         Destroy(introAnim.gameObject);
         Destroy(transform.GetChild(4).gameObject);
 
+        var mCamera = Camera.main.gameObject.GetComponent<CameraIntro>();
+        mCamera.StartIntro();
+
         yield return new WaitForSeconds(0.2f);
         anim.enabled = true;
         yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.95f);
@@ -122,6 +125,8 @@ public class Batter : Character
         strikeCursor.SetActive(true);
         SpeedBar.instance.StartCount();
         anim.SetBool("Idle", true);
+
+        mCamera.EndIntro();
     }
 
 

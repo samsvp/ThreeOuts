@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CameraZoom : MonoBehaviour
 {
+
+    protected Camera mCamera;
+
     // Positions
     public Transform strikeZone;
     [HideInInspector]
@@ -23,18 +26,13 @@ public class CameraZoom : MonoBehaviour
     public bool isZoomedIn = false;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
-        initialSize = Camera.main.orthographicSize;
+        mCamera = GetComponent<Camera>();
+        initialSize = mCamera.orthographicSize;
         initialPosition = transform.position;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    
     
     public void Zoom(Vector2 position, float size)
     {
@@ -48,11 +46,11 @@ public class CameraZoom : MonoBehaviour
     {
         while (Mathf.Abs(Camera.main.orthographicSize - size) > 0.05f)
         {
-            Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, size, speed * Time.fixedDeltaTime);
+            mCamera.orthographicSize = Mathf.Lerp(mCamera.orthographicSize, size, speed * Time.fixedDeltaTime);
             yield return new WaitForFixedUpdate();
         }
 
-        Camera.main.orthographicSize = size;
+        mCamera.orthographicSize = size;
 
         isZoomedIn = !isZoomedIn;
     }
